@@ -93,13 +93,13 @@ const ticketSchema = new mongoose.Schema({
 });
 
 // Index pour les performances
-ticketSchema.index({ ticketId: 1 });
-ticketSchema.index({ userId: 1 });
-ticketSchema.index({ eventId: 1 });
-ticketSchema.index({ paymentId: 1 });
-ticketSchema.index({ status: 1 });
-ticketSchema.index({ 'qrCode.data': 1 });
-ticketSchema.index({ createdAt: -1 });
+ticketSchema.index({ ticketId: 1 }, { background: true });
+ticketSchema.index({ userId: 1 }, { background: true });
+ticketSchema.index({ eventId: 1 }, { background: true });
+ticketSchema.index({ paymentId: 1 }, { background: true });
+ticketSchema.index({ status: 1 }, { background: true });
+ticketSchema.index({ 'qrCode.data': 1 }, { background: true });
+ticketSchema.index({ createdAt: -1 }, { background: true });
 
 // Virtual pour le nom complet du détenteur
 ticketSchema.virtual('holderFullName').get(function() {

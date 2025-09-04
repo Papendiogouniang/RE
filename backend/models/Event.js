@@ -137,7 +137,7 @@ eventSchema.index({ date: 1 });
 eventSchema.index({ category: 1 });
 eventSchema.index({ status: 1 });
 eventSchema.index({ 'location.city': 1 });
-eventSchema.index({ title: 'text', description: 'text' });
+eventSchema.index({ title: 'text', description: 'text' }, { background: true });
 
 // Virtual pour les billets disponibles
 eventSchema.virtual('availableTickets').get(function() {

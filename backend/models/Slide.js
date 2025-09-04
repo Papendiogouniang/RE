@@ -76,9 +76,9 @@ const slideSchema = new mongoose.Schema({
 });
 
 // Index pour l'ordre et les performances
-slideSchema.index({ order: 1 });
-slideSchema.index({ isActive: 1 });
-slideSchema.index({ startDate: 1, endDate: 1 });
+slideSchema.index({ order: 1 }, { background: true });
+slideSchema.index({ isActive: 1 }, { background: true });
+slideSchema.index({ startDate: 1, endDate: 1 }, { background: true });
 
 // Méthode pour vérifier si le slide est actif
 slideSchema.methods.isCurrentlyActive = function() {
